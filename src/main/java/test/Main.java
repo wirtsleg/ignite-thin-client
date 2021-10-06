@@ -9,11 +9,12 @@ import org.apache.ignite.configuration.ClientConfiguration;
 
 public class Main {
     public static void main(String[] args) {
+        // Replace the Address with your Nebula cluster URL+port. Default thin client port is 10800
         ClientConfiguration cfg = new ClientConfiguration()
             .setAddresses(
-                "c42af0de-9ea5-4abd-9182-26b0ac7c2bd3.gridgain-nebula-test.com:10800")
-            .setUserName("сс_login")
-            .setUserPassword("сс_password");
+                "24372d0d-d94d-452b-b058-25f2814ebd55.gridgain-nebula-test.com:10800")
+            .setUserName("ignite")
+            .setUserPassword("ignite");
 
         try (IgniteClient client = Ignition.startClient(cfg)) {
             executeSql(client, "" +
