@@ -4,7 +4,6 @@ import org.apache.ignite.Ignition;
 import org.apache.ignite.cache.query.SqlFieldsQuery;
 import org.apache.ignite.client.ClientCache;
 import org.apache.ignite.client.IgniteClient;
-import org.apache.ignite.client.SslMode;
 import org.apache.ignite.configuration.ClientConfiguration;
 
 public class Main {
@@ -13,8 +12,7 @@ public class Main {
             .setAddresses(
                 "385da3d5-567a-470d-bff8-d3224301df60.gridgain-nebula-test.com:10800")
             .setUserName("сс_login")
-            .setUserPassword("сс_password")
-            .setSslMode(SslMode.REQUIRED);
+            .setUserPassword("сс_password");
 
         try (IgniteClient client = Ignition.startClient(cfg)) {
             client.query(new SqlFieldsQuery("" +
