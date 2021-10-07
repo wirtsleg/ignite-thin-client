@@ -16,6 +16,7 @@ public class Main {
             .setUserName("ignite")
             .setUserPassword("ignite");
 
+        // Create a cache and add a couple of rows
         try (IgniteClient client = Ignition.startClient(cfg)) {
             executeSql(client, "" +
                 "CREATE TABLE IF NOT EXISTS DemoPersonCache(" +
